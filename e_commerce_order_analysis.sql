@@ -1,5 +1,4 @@
 
--- Create tables
 CREATE TABLE Customers (
     CustomerID INT PRIMARY KEY,
     Name VARCHAR(100),
@@ -23,7 +22,7 @@ CREATE TABLE OrderDetails (
     FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
 );
 
--- Complex query: Top 3 spending customers in the last 6 months
+
 SELECT C.Name, C.Email, SUM(O.TotalAmount) AS TotalSpent
 FROM Customers C
 JOIN Orders O ON C.CustomerID = O.CustomerID
